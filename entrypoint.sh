@@ -20,6 +20,8 @@ case "$1" in
         pip3 install virtualenv
         python3 -m virtualenv MyEnv
         source MyEnv/bin/activate
+        mkdir -p /root/.config/pip
+        cp -rf ./pip.conf /root/.config/pip/
         pip3 install -r requirements.txt
         pip3 install bs4 lxml
         license_finder report --python-version=3 --format csv > license.csv
