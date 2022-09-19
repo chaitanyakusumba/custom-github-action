@@ -20,8 +20,7 @@ case "$1" in
         pip3 install virtualenv
         python3 -m virtualenv MyEnv
         source MyEnv/bin/activate
-        mkdir -p /root/.config/pip
-        cp -rf ./pip.conf /root/.config/pip/
+        export PIP_EXTRA_INDEX_URL=https://nexusadmin:ZVpReR3d^iW_nXbT@nexus.digitaldots.ai/repository/pypi-all/simple
         pip3 install -r requirements.txt
         pip3 install bs4 lxml
         license_finder report --python-version=3 --format csv > license.csv
